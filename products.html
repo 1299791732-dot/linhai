@@ -1,38 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Products</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories - LINHAI RESIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; color: #000000; background-color: #ffffff; position: relative; line-height: 1.6; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E"); z-index: -1; pointer-events: none; }
+        .red-underline { position: relative; display: inline-block; padding-bottom: 4px; }
+        .red-underline::after { content: ''; position: absolute; width: 100%; height: 3px; bottom: 0; left: 0; background-color: #dc2626; }
+        .nav-link { position: relative; padding-bottom: 2px; font-size: 1.125rem; font-weight: bold; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 3px; bottom: -4px; left: 0; background-color: #dc2626; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .sidebar-link { display: flex; justify-content: space-between; align-items: center; padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #000000; font-weight: bold; font-size: 1.1rem; transition: all 0.2s; }
+        .sidebar-link:hover, .sidebar-link.active { background-color: #f3f4f6; color: #dc2626; border-left: 4px solid #dc2626; }
+        .chat-widget { display: none; }
+        .chat-widget.active { display: flex; }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md border-b-4 border-blue-800">
+        <div class="container mx-auto px-4 lg:px-8 py-4 flex justify-between items-center">
+            <a href=" " class="flex items-center gap-4">
+                < img src="676167dc-69ec-4aff-ade2-a3733e2d27e9.png" alt="Sanyuan Logo" class="h-16">
+                <span class="text-3xl font-black text-black tracking-widest uppercase italic">LINHAI RESIN</span>
+            </a >
+            <nav class="hidden xl:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-black uppercase">Home</a >
+                <div class="relative group dropdown">
+                    <button class="nav-link text-black uppercase flex items-center gap-1">Company <i class="fa-solid fa-chevron-down text-sm mt-1"></i></button>
+                    <div class="dropdown-menu absolute hidden pt-4 w-64 z-50">
+                        <div class="bg-white shadow-xl border-t-4 border-red-600 rounded-b flex flex-col">
+                            <a href="about.html" class="px-6 py-4 hover:bg-gray-100 text-black font-bold border-b">About Us</a >
+                            <a href="certifications.html" class="px-6 py-4 hover:bg-gray-100 text-black font-bold border-b">Certifications & Licenses</a >
+                            <a href="news.html" class="px-6 py-4 hover:bg-gray-100 text-black font-bold">News & Events</a >
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group dropdown">
+                    <button class="nav-link text-black uppercase flex items-center gap-1">Products <i class="fa-solid fa-chevron-down text-sm mt-1"></i></button>
+                    <div class="dropdown-menu absolute hidden pt-4 w-72 z-50">
+                        <div class="bg-white shadow-xl border-t-4 border-red-600 rounded-b flex flex-col">
+                            <a href="products-category.html" class="px-6 py-4 hover:bg-gray-100 text-black font-bold border-b">Product Categories</a >
+                            <a href="tech-sharing.html" class="px-6 py-4 hover:bg-gray-100 text-black font-bold">Technical Sharing</a >
+                        </div>
+                    </div>
+                </div>
+                <a href="systems-solutions.html" class="nav-link text-black uppercase">System Solutions</a >
+                <a href="contact.html" class="nav-link text-black uppercase">Contact Us</a >
+            </nav>
+            <div class="hidden lg:flex items-center">
+                <form action="/search" method="GET" class="relative">
+                    <input type="text" name="q" placeholder="Please enter keywords" class="pl-4 pr-12 py-3 border-2 border-blue-500 rounded text-lg focus:outline-none focus:border-red-600 text-black w-64 bg-white">
+                    <button type="submit" class="absolute right-3 top-3.5 text-black hover:text-red-600 text-xl"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
 
-<!-- header -->
+    <div class="pt-32 pb-20 container mx-auto px-4 lg:px-8">
+        <div class="mb-8 text-lg font-bold text-gray-500">
+            <a href="index.html" class="hover:text-red-600 text-black">Home</a > / 
+            <a href="products-category.html" class="hover:text-red-600 text-black">Products</a > / 
+            <span class="text-red-600">Product Categories</span>
+        </div>
 
-<div class="pt-28 container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-12">
+            <aside class="w-full lg:w-1/4">
+                <div class="bg-white border border-gray-200 shadow-sm sticky top-36">
+                    <div class="bg-blue-800 text-white p-4 font-black text-xl uppercase">Product Categories</div>
+                    <nav class="flex flex-col">
+                        <a href="#" class="sidebar-link active">All Products <i class="fa-solid fa-angle-right"></i></a >
+                        <a href="#" class="sidebar-link">Cation Exchange Resins <i class="fa-solid fa-angle-right"></i></a >
+                        <a href="#" class="sidebar-link">Anion Exchange Resins <i class="fa-solid fa-angle-right"></i></a >
+                        <a href="#" class="sidebar-link">Macroporous Adsorption Resins <i class="fa-solid fa-angle-right"></i></a >
+                        <a href="#" class="sidebar-link">Special Exchange Resins <i class="fa-solid fa-angle-right"></i></a >
+                        <a href="#" class="sidebar-link">Mixed Bed Resins <i class="fa-solid fa-angle-right"></i></a >
+                    </nav>
+                </div>
+            </aside>
 
-<h1 class="text-3xl font-black mb-6">Products</h1>
+            <main class="w-full lg:w-3/4">
+                <h1 class="text-4xl font-black text-black mb-8 uppercase red-underline">Our Resins Portfolio</h1>
+                <p class="text-lg text-black mb-10 font-bold">Explore our comprehensive range of high-performance ion exchange resins designed for water treatment, metallurgy, and food processing applications.</p >
 
-<div class="grid grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white border border-gray-200 shadow-md p-6 flex flex-col justify-between">
+                        <div>
+                            < img src="https://images.unsplash.com/photo-1605557202138-097825c38700?q=80&w=800&auto=format&fit=crop" alt="Special Resin" class="w-full h-48 object-cover mb-4 border border-gray-200">
+                            <h2 class="text-2xl font-black text-blue-800 uppercase mb-2">LH-150Z Special Resin</h2>
+                            <p class="text-black text-lg mb-4">Engineered with fixed ionic groups to selectively adsorb zinc ions from waste acid and industrial wastewater.</p >
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                            <a href="product-detail.html" class="bg-white text-black border-2 border-black px-4 py-2 font-bold uppercase text-center hover:bg-black hover:text-white transition-colors w-full">Learn More</a >
+                            <a href="contact.html" class="bg-blue-800 text-white border-2 border-blue-800 px-4 py-2 font-bold uppercase text-center hover:bg-red-600 hover:border-red-600 transition-colors w-full">Contact Sales</a >
+                        </div>
+                    </div>
 
-<div class="bg-white p-4 shadow">
-< img src="https://images.unsplash.com/photo-1605557202138-097825c38700" class="h-40 w-full object-cover">
-<h2 class="font-bold mt-3">LH-150Z Resin</h2>
-</div>
+                    <div class="bg-white border border-gray-200 shadow-md p-6 flex flex-col justify-between">
+                        <div>
+                            < img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=800&auto=format&fit=crop" alt="Cation Resin" class="w-full h-48 object-cover mb-4 border border-gray-200">
+                            <h2 class="text-2xl font-black text-blue-800 uppercase mb-2">001×7 Strong Acid Cation</h2>
+                            <p class="text-black text-lg mb-4">Premium gel-type strong acid cation exchange resin used primarily for water softening and demineralization.</p >
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                            <a href="product-detail.html" class="bg-white text-black border-2 border-black px-4 py-2 font-bold uppercase text-center hover:bg-black hover:text-white transition-colors w-full">Learn More</a >
+                            <a href="contact.html" class="bg-blue-800 text-white border-2 border-blue-800 px-4 py-2 font-bold uppercase text-center hover:bg-red-600 hover:border-red-600 transition-colors w-full">Contact Sales</a >
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
 
-<div class="bg-white p-4 shadow">
-< img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b" class="h-40 w-full object-cover">
-<h2 class="font-bold mt-3">001×7 Cation</h2>
-</div>
+    <footer class="bg-blue-800 pt-16 pb-8 border-t-8 border-red-600">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-blue-600 pb-12">
+                <div class="lg:col-span-2">
+                    <h3 class="text-3xl font-black text-white mb-6 tracking-widest uppercase italic">LINHAI RESIN</h3>
+                    <p class="text-white text-lg leading-relaxed max-w-md mb-8">Mastering polymer synthesis since 1972. We engineer high-performance ion exchange resins for industrial, food, and nuclear sectors globally.</p >
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/linhai-resin" target="_blank" class="w-12 h-12 border-2 border-white text-white flex items-center justify-center text-xl hover:bg-white hover:text-blue-800 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a >
+                        <a href="https://www.facebook.com/linhairesin" target="_blank" class="w-12 h-12 border-2 border-white text-white flex items-center justify-center text-xl hover:bg-white hover:text-blue-800 transition-colors"><i class="fa-brands fa-facebook-f"></i></a >
+                        <a href="contact.html" class="w-12 h-12 border-2 border-white text-white flex items-center justify-center text-xl hover:bg-white hover:text-blue-800 transition-colors"><i class="fa-brands fa-weixin"></i></a >
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-black mb-6 uppercase text-white">Products</h4>
+                    <ul class="space-y-4 text-lg text-gray-200 font-bold">
+                        <li><a href="products-category.html" class="hover:text-white hover:underline">Cation Resins</a ></li>
+                        <li><a href="products-category.html" class="hover:text-white hover:underline">Anion Resins</a ></li>
+                        <li><a href="products-category.html" class="hover:text-white hover:underline">Macroporous</a ></li>
+                        <li><a href="products-category.html" class="hover:text-white hover:underline">Chelating Resins</a ></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-black mb-6 uppercase text-white">Company</h4>
+                    <ul class="space-y-4 text-lg text-gray-200 font-bold">
+                        <li><a href="about.html" class="hover:text-white hover:underline">About Us</a ></li>
+                        <li><a href="certifications.html" class="hover:text-white hover:underline">Certifications</a ></li>
+                        <li><a href="mailto:linhaisyresin@gmail.com" class="hover:text-white hover:underline">linhaisyresin@gmail.com</a ></li>
+                        <li><a href="tel:+8651588895989" class="hover:text-white hover:underline">+86-515-88895989</a ></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between text-base text-gray-300 font-bold">
+                <p>&copy; 2026 Jiangsu Linhai Resin Science And Technology Co., Ltd. All right reserved.</p >
+                <div class="mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="hover:text-white">Privacy Policy</a >
+                    <a href="#" class="hover:text-white">Cookie Policy</a >
+                </div>
+            </div>
+        </div>
+    </footer>
 
-</div>
-
-</div>
-
-<script src="js/main.js"></script>
+    <div class="fixed bottom-8 right-8 z-50 flex flex-col items-end">
+        <div id="chat-panel" class="chat-widget w-80 bg-white border border-gray-300 shadow-2xl mb-4 flex-col overflow-hidden rounded-t-lg">
+            <div class="bg-black text-white p-4 flex justify-between items-center border-b-4 border-red-600">
+                <span class="font-black uppercase text-lg"><i class="fa-solid fa-robot mr-2"></i> Linhai AI Assistant</span>
+                <button onclick="toggleChat()" class="hover:text-red-500 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-4 bg-gray-50 h-64 overflow-y-auto flex flex-col gap-3">
+                <div class="bg-white border border-gray-200 p-3 text-black text-base shadow-sm rounded">Hello! I'm the Linhai Resin virtual assistant. Require technical data or pricing?</div>
+                <div class="flex gap-2">
+                    <button class="bg-white border border-gray-300 text-black px-3 py-2 text-sm font-bold hover:border-red-600 hover:text-red-600 rounded w-1/2">Product Types</button>
+                    <button class="bg-white border border-gray-300 text-black px-3 py-2 text-sm font-bold hover:border-red-600 hover:text-red-600 rounded w-1/2">Get Quote</button>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 p-3 bg-white flex">
+                <input type="text" placeholder="Query..." class="flex-1 bg-gray-100 px-3 py-2 text-black focus:outline-none focus:border-red-600 border border-transparent">
+                <button class="bg-black text-white px-4 py-2 hover:bg-red-600 transition-colors"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button onclick="toggleChat()" class="bg-black text-white px-6 py-4 rounded-full font-black uppercase flex items-center gap-3 shadow-xl hover:bg-red-600 transition-colors text-lg">
+            <i class="fa-solid fa-comment-dots text-2xl"></i> Support
+        </button>
+    </div>
+    <script>function toggleChat() { document.getElementById('chat-panel').classList.toggle('active'); }</script>
 </body>
 </html>
